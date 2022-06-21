@@ -173,7 +173,7 @@
             openDiplom(code_id); 
         }
 
-        const url = new URL("http://localhost:3000/course");
+        const url = new URL("http://95.213.224.23:3000/course");
         
         var section = document.getElementById("section");
         
@@ -273,7 +273,7 @@
             id_user = localStorage.getItem("id_user");
 
             console.log(id_user, price, id_course);
-            fetch ('http://localhost:3000/finance', {
+            fetch ('http://95.213.224.23:3000/finance', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -344,7 +344,7 @@
 
         function getdataOfDiplom(){
             id_user = localStorage.getItem("id_user");
-            let url = new URL("http://localhost:3000/result?id_user="+id_user);
+            let url = new URL("http://95.213.224.23:3000/result?id_user="+id_user);
             var diplomSpace = document.getElementById("diplomSpace");
             var userInfo= document.getElementById("userInfo");
             
@@ -408,7 +408,7 @@
                 }
             }
 
-            fetch ('http://localhost:3000/users', {
+            fetch ('http://95.213.224.23:3000/users', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -439,7 +439,7 @@
                 checkStatus();
             } else {
 
-            const urlToUsers =  new URL("http://localhost:3000/users?login="+loginInput.value+"&pass="+passwordInput.value);
+            const urlToUsers =  new URL("http://95.213.224.23:3000/users?login="+loginInput.value+"&pass="+passwordInput.value);
             fetch(urlToUsers).then(function(response) {
                 response.json().then(function(data) {
                     if (data.length == 0) {
